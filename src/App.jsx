@@ -1,5 +1,6 @@
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
 import { CORE_CONCEPTS } from './data.js'; 
 import { EXAMPLES } from './data.js';
 import {useState} from 'react';
@@ -20,6 +21,7 @@ function App() {
       </div>
     )
   }
+
   return (
     <div>
       <Header/>
@@ -36,10 +38,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <li><button className={selectedTopic=="components" ? 'active':undefined} onClick={()=>(setSelectedTopic('components'))}>Components</button></li>
-            <li><button className={selectedTopic=="jsx" ? 'active':undefined} onClick={()=>(setSelectedTopic('jsx'))}>JSX</button></li>
-            <li><button className={selectedTopic=="props" ? 'active':undefined} onClick={()=>(setSelectedTopic('props'))}>Props</button></li>
-            <li><button className={selectedTopic=="state" ? 'active':undefined} onClick={()=>(setSelectedTopic('state'))}>State</button></li>
+            <TabButton isSelected = {selectedTopic === 'components'} onSelect={()=>(setSelectedTopic('components'))}>Components</TabButton>
+            <TabButton isSelected = {selectedTopic === 'jsx'} onSelect={()=>(setSelectedTopic('jsx'))}>JSX</TabButton>
+            <TabButton isSelected = {selectedTopic === 'props'} onSelect={()=>(setSelectedTopic('props'))}>Props</TabButton>
+            <TabButton isSelected = {selectedTopic === 'state'} onSelect={()=>(setSelectedTopic('state'))}>State</TabButton>
           </menu>
 
           {tabContent}
