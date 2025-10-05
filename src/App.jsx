@@ -3,6 +3,7 @@ import componentsPNG from './assets/components.png';
 import jsxPNG from './assets/jsx-ui.png';
 import propsPNG from './assets/config.png';
 import statePNG from './assets/state-mgmt.png';
+import CoreConcept from './components/CoreConcept.jsx'
 const ContentList =['Fundamentals','core','crucial'];
 
 function GetRandomIndex()
@@ -25,17 +26,6 @@ function Header() {
   );
 }
 
-function CoreConcepts(props)
-{
-  return (
-    <li>
-      <img src={props.image} alt={props.title}/>
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
-
 function App() {
   return (
     <div>
@@ -44,19 +34,19 @@ function App() {
         <section id="core-concepts">
           <h2>CoreConcepts</h2>
           <ul>
-            <CoreConcepts
+            <CoreConcept
               title="Components"
               description="The core UI building block. compose the user interface by combining multiple components."
               image={componentsPNG}/>
-            <CoreConcepts 
+            <CoreConcept 
             title = "JSX"
             description = "Return potentially dynamic HTML code to define the actual markup that will be rendered."
             image = {jsxPNG}/>
-            <CoreConcepts 
+            <CoreConcept 
             title = "Props"
             description = "Make components configurable and therefore reusable by passing input data to them."
             image = {propsPNG}/>
-            <CoreConcepts 
+            <CoreConcept 
             title = "State"
             description = "React-managed data which when changed causes the component to re-render & the UI to update"
             image = {statePNG}/>
