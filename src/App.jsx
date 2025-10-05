@@ -1,5 +1,8 @@
-import coreConceptsPng from './assets/react-core-concepts.png';
-import coreConceptImage from './assets/components.png';
+import atomPNG from './assets/react-core-concepts.png';
+import componentsPNG from './assets/components.png';
+import jsxPNG from './assets/jsx-ui.png';
+import propsPNG from './assets/config.png';
+import statePNG from './assets/state-mgmt.png';
 const ContentList =['Fundamentals','core','crucial'];
 
 function GetRandomIndex()
@@ -12,7 +15,7 @@ function Header() {
   const paraHeading = ContentList[GetRandomIndex()];
   return (
     <header>
-        <img src={coreConceptsPng} alt="Stylized atom" />
+        <img src={atomPNG} alt="Stylized atom" />
         <h1>React Essentials</h1>
         <p>
           {paraHeading} React concepts you will need for almost any app you are
@@ -43,12 +46,22 @@ function App() {
           <ul>
             <CoreConcepts
               title="Components"
-              description="The core UI building block."
-              image={coreConceptImage}/>
-            <CoreConcepts />
-            <CoreConcepts />
-            <CoreConcepts />
+              description="The core UI building block. compose the user interface by combining multiple components."
+              image={componentsPNG}/>
+            <CoreConcepts 
+            title = "JSX"
+            description = "Return potentially dynamic HTML code to define the actual markup that will be rendered."
+            image = {jsxPNG}/>
+            <CoreConcepts 
+            title = "Props"
+            description = "Make components configurable and therefore reusable by passing input data to them."
+            image = {propsPNG}/>
+            <CoreConcepts 
+            title = "State"
+            description = "React-managed data which when changed causes the component to re-render & the UI to update"
+            image = {statePNG}/>
           </ul>
+
         </section>
       </main>
     </div>
