@@ -1,9 +1,6 @@
 import atomPNG from './assets/react-core-concepts.png';
-import componentsPNG from './assets/components.png';
-import jsxPNG from './assets/jsx-ui.png';
-import propsPNG from './assets/config.png';
-import statePNG from './assets/state-mgmt.png';
-import CoreConcept from './components/CoreConcept.jsx'
+import CoreConcept from './components/CoreConcept.jsx';
+import { CORE_CONCEPTS } from './data.js'; 
 const ContentList =['Fundamentals','core','crucial'];
 
 function GetRandomIndex()
@@ -34,24 +31,10 @@ function App() {
         <section id="core-concepts">
           <h2>CoreConcepts</h2>
           <ul>
-            <CoreConcept
-              title="Components"
-              description="The core UI building block. compose the user interface by combining multiple components."
-              image={componentsPNG}/>
-            <CoreConcept 
-            title = "JSX"
-            description = "Return potentially dynamic HTML code to define the actual markup that will be rendered."
-            image = {jsxPNG}/>
-            <CoreConcept 
-            title = "Props"
-            description = "Make components configurable and therefore reusable by passing input data to them."
-            image = {propsPNG}/>
-            <CoreConcept 
-            title = "State"
-            description = "React-managed data which when changed causes the component to re-render & the UI to update"
-            image = {statePNG}/>
+            {CORE_CONCEPTS.map((concept) => (
+              <CoreConcept id={concept.title} {...concept}/>
+            ))}
           </ul>
-
         </section>
       </main>
     </div>
