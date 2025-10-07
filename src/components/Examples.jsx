@@ -22,7 +22,7 @@ export default function Examples()
         )
     }
     return (<Section title = "Examples" id="examples">
-        <Tabs buttonsContainer = 'menu' buttons={<><TabButton isSelected = {selectedTopic === 'components'} onSelect={()=>(setSelectedTopic('components'))}>Components</TabButton>
+        <Tabs buttons={<><TabButton isSelected = {selectedTopic === 'components'} onSelect={()=>(setSelectedTopic('components'))}>Components</TabButton>
             <TabButton isSelected = {selectedTopic === 'jsx'} onSelect={()=>(setSelectedTopic('jsx'))}>JSX</TabButton>
             <TabButton isSelected = {selectedTopic === 'props'} onSelect={()=>(setSelectedTopic('props'))}>Props</TabButton>
             <TabButton isSelected = {selectedTopic === 'state'} onSelect={()=>(setSelectedTopic('state'))}>State</TabButton></>}>
